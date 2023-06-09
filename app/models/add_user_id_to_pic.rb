@@ -1,0 +1,2 @@
+class AddUserIdToPic < ApplicationRecord
+end
