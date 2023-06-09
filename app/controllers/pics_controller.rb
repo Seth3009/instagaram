@@ -1,6 +1,7 @@
 class PicsController < ApplicationController
   before_action :set_pic, only: [:edit, :show, :update, :destroy]
   def index 
+    @pics = Pic.all
   end
 
   def new
@@ -9,6 +10,14 @@ class PicsController < ApplicationController
 
   def create
     @pic = Pic.new(pic_params)
+    if @pic.save
+      redirect_to @pic, notice: 'Pic was successfully created.'
+    else
+      render 'new'
+    end
+  end
+
+  def show
   end
 
   private
