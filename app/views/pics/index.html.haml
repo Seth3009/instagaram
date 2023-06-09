@@ -1,2 +1,4 @@
 - @pics.each do |pic|
-  %h2=  pic.title
+  %h2= link_to pic.title, pic_path(pic)
+
+= link_to "New Gram it", new_pic_path
